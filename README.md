@@ -1,2 +1,2 @@
-# undercoatcat.github.io
-Just your average neighborhood cat's website
+# Pages
+- [Cobblemon 1.20.1 Modlist](https://undercoatcat.github.io/Cobblemon-1.20.1-Modlist/)
