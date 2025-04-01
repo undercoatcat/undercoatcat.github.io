@@ -1,3 +1,5 @@
 remote_theme: pages-themes/midnight@v0.2.0
+title: Undercoatcat
+description: Just your average neighborhood cat's website
 plugins:
 - jekyll-remote-theme
