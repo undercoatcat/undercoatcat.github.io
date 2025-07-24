@@ -1,5 +1,4 @@
-// SHHHHHHHHH DO NOT TELL ANYONE ABOUT THE FIRST FUNCTION!
-
+//shhhhh
 function triggerEasterEgg() {
   alert("You were warned... 😼");
   document.body.style.transition = "all 0.5s ease";
