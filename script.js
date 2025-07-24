@@ -1,4 +1,4 @@
-//SHHHHHHHHH DO NOT TELL ANYONE ABOUT THE FIRST FUNCTION!
+// SHHHHHHHHH DO NOT TELL ANYONE ABOUT THE FIRST FUNCTION!
 
 function triggerEasterEgg() {
   alert("You were warned... 😼");
@@ -12,6 +12,9 @@ function triggerEasterEgg() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const doNotClick = document.getElementById("doNotClick");
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
   if (doNotClick) {
     doNotClick.addEventListener("click", (e) => {
       e.preventDefault();
