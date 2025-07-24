@@ -35,19 +35,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }, index * 200); 
   });
 
-  if (modeToggle) {
-    // local storage 😼
-    const savedMode = localStorage.getItem('theme');
-    if (savedMode === 'light') {
-      document.body.classList.add('light-mode');
-      modeToggle.textContent = '☀️';
-    }
+if (modeToggle) {
+  // Local storage 😼
+  const savedMode = localStorage.getItem('theme');
+  if (savedMode === 'light') {
+    document.body.classList.add('light-mode');
+    modeToggle.textContent = '☀️';
+  } else {
+    modeToggle.textContent = '🌙';
+  }
 
-    modeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
+  modeToggle.addEventListener('click', () => {
+    const body = document.body;
+
+    body.classList.add('fade-out');
+
+    setTimeout(() => {
+      body.classList.toggle('light-mode');
+
+      const isLight = body.classList.contains('light-mode');
       modeToggle.textContent = isLight ? '☀️' : '🌙';
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-  }
+
+      body.classList.remove('fade-out');
+      body.classList.add('fade-in');
+
+      setTimeout(() => {
+        body.classList.remove('fade-in');
+      }, 400);
+    }, 300);
+  });
+}
+
 });
