@@ -31,6 +31,7 @@ body {
   font-size: 1.2rem;
   color: #f5f5f5;
   cursor: pointer;
+  padding: 0.25rem;
 }
 
 .logo {
@@ -278,4 +279,15 @@ body.light-mode .hamburger span {
 
 body.light-mode #modeToggle {
   color: #121212;
+}
+
+
+/* FIX FOR DESKTOP MODE TOGGLE BUTTON LOoKING UGLY; DO NOT TOUCH IF IT WORKS */
+@media (hover: hover) and (pointer: fine) {
+  #modeToggle {
+    background-color: transparent;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
 }
