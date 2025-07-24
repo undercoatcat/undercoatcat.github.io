@@ -27,4 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle("open");
     });
   }
+  
+  const animatedElements = document.querySelectorAll('.animate-on-load');
+  animatedElements.forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add('show-on-load');
+    }, index * 200); 
+  });
+  
 });
