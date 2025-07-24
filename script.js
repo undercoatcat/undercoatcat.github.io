@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 if (modeToggle) {
-  // Local storage 😼
   const savedMode = localStorage.getItem('theme');
   if (savedMode === 'light') {
     document.body.classList.add('light-mode');
@@ -47,8 +46,8 @@ if (modeToggle) {
 
   modeToggle.addEventListener('click', () => {
     const body = document.body;
-
     body.classList.add('fade-out');
+    void body.offsetWidth;
 
     setTimeout(() => {
       body.classList.toggle('light-mode');
@@ -56,7 +55,7 @@ if (modeToggle) {
       const isLight = body.classList.contains('light-mode');
       modeToggle.textContent = isLight ? '☀️' : '🌙';
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
-
+      
       body.classList.remove('fade-out');
       body.classList.add('fade-in');
 
@@ -66,5 +65,4 @@ if (modeToggle) {
     }, 300);
   });
 }
-
 });
