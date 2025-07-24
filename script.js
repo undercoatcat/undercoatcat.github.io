@@ -34,5 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
       el.classList.add('show-on-load');
     }, index * 200); 
   });
-  
+
+  if (modeToggle) {
+    // local storage 😼
+    const savedMode = localStorage.getItem('theme');
+    if (savedMode === 'light') {
+      document.body.classList.add('light-mode');
+      modeToggle.textContent = '☀️';
+    }
+
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      modeToggle.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  }
 });
